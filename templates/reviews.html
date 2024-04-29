@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Testimonial</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			width: 100%;
+			min-height: 100vh;
+			background-color: #fcfcfc;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container{
+			position: relative;
+			width: 100%;
+			min-height: 450px;
+			background-color: #f5f5f5;
+		}
+		.container .contents-wraper{
+			width: 70%;
+			min-height: inherit;
+			margin: 30px auto;
+			text-align: center;
+		}
+		.contents-wraper .header h1{
+			position: relative;
+			font-size: 40px;
+			text-transform: uppercase;
+			font-weight: 500;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+		.contents-wraper .header h1::before{
+			content: '';
+			width: 200px;
+			height: 2px;
+			background-color: #006994;
+			border-radius: 15px;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: -10px;
+		}
+		.contents-wraper .testRow{
+			width: 100%;
+			min-height: inherit;
+			position: relative;
+			overflow: hidden;
+		}
+		.testRow .testItem{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		.testRow .testItem:not(.active){
+			top: 0;
+			left: -100%;
+		}
+		.testRow .testItem img{
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin-bottom: 5px;
+			outline: 2px solid #006994;
+			outline-offset: 2px;
+		}
+		.testRow .testItem h3{
+			font-size: 30px;
+			font-style: italic;
+			padding: 7px;
+		}
+		.testRow .testItem h4{
+			font-style: italic;
+		}
+		.testRow .testItem p{
+			font-size: 18px;
+			letter-spacing: 1px;
+			line-height: 1.2;
+			padding: 10px;
+		}
+		.contents-wraper .indicators{
+			position: absolute;
+			bottom: 30px;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 5px;
+			cursor: pointer;
+		}
+		.contents-wraper .indicators .dot{
+			width: 15px;
+			height: 15px;
+			margin: 0px 3px;
+			border: 3px solid #aaa;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.5s ease;
+		}
+		.contents-wraper .indicators .active{
+			background-color: #006994;
+		}
+		@keyframes next1{
+			from{
+				left: 0%;
+			}
+			to{
+				left: -100%;
+			}
+		}
+		@keyframes next2{
+			from{
+				left: 100%;
+			}
+			to{
+				left: 0%;
+			}
+		}
+
+		@keyframes prev1{
+			from{
+				left: 0%;
+			}
+			to{
+				left: 100%;
+			}
+		}
+		@keyframes prev2{
+			from{
+				left: -100%;
+			}
+			to{
+				left: 0%;
+			}
+		}
+
+		@media(max-width: 550px){
+			.container .contents-wraper{
+				width: 90%;
+			}
+			.contents-wraper .header h1{
+				font-size: 32px;
+			}
+			.testRow .testItem h3{
+				font-size: 26px;
+			}
+			.testRow .testItem p{
+				font-size: 16px;
+				letter-spacing: initial;
+				line-height: initial;
+			}
+
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	
+	<div class="contents-wraper">
+		
+		<section class="header"><h1>Our Client Reviews</h1></section>
+
+		<section class="testRow">
+			
+			<div class="testItem active">
+                <img src="{% static "image/image1.jpeg" %}">
+				<h3>Web Developer</h3>
+				<h4>Selshiya, CANADA</h4>
+				<p>"I rented a car through this website, and the process was 
+					smooth and hassle-free.The car was in great condition, and
+					 the staff was friendly and helpful. Highly recommended!"
+				</p>
+			</div>
+
+			<div class="testItem">
+                <img src="{% static "image/image4.jpeg" %}">
+				<h3>Data Analytics</h3>
+				<h4>Saran, USA</h4>
+				<p>"I had an amazing experience with this car rental website.
+					 The prices were competitive, and the selection of cars was impressive. 
+					 The booking process was straightforward, and the car was ready for me when I arrived.
+					  Will definitely use this service again!"
+				</p>
+			</div>
+
+			<div class="testItem">
+                <img src="{% static "image/image2.jpeg" %}">
+				<h3>Backend Developer</h3>
+				<h4>Shaleny, FRANCE</h4>
+				<p>"I've rented cars from various websites before, but this one stands out. 
+					The customer service was exceptional, and they went above and beyond to accommodate my needs. The car was clean and well-maintained.
+					 I had a fantastic road trip thanks to this car rental website."</p>
+			</div>
+
+			<div class="testItem">
+                <img src="{% static "image/image3.jpeg" %}"
+				<h3>Jane Doe</h3>
+				<h4>San Francisco, USA</h4>
+				<p>"I had a last-minute car rental request, and this website saved the day.
+					 They were able to find me a car at a reasonable price, even during a busy period.
+					  The communication was excellent, and the pickup and drop-off process were convenient.
+					 I highly recommend this car rental website for their efficiency and reliability."</p>
+			</div>
+
+			<div class="testItem">
+                <img src="{% static "image/image4.jpeg" %}"
+				<h3>Frontend Developer</h3>
+				<h4>Riya, USA</h4>
+	        <p>"I was skeptical about renting a car online, but this website exceeded my expectations. 
+		The website was user-friendly, and the booking process was quick and easy.
+		 The car I rented was exactly as described, 
+		and I had a seamless experience from start to finish"</p>
+			</div>
+
+		</section>
+
+		<section class="indicators">
+			<div class="dot active" attr='0' onclick="switchTest(this)"></div>
+			<div class="dot" attr='1' onclick="switchTest(this)"></div>
+			<div class="dot" attr='2' onclick="switchTest(this)"></div>
+			<div class="dot" attr='3' onclick="switchTest(this)"></div>
+			<div class="dot" attr='4' onclick="switchTest(this)"></div>
+		</section>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	// Access the testimonials
+	let testSlide = document.querySelectorAll('.testItem');
+	// Access the indicators
+	let dots = document.querySelectorAll('.dot');
+
+	var counter = 0;
+
+	// Add click event to the indicators
+	function switchTest(currentTest){
+		currentTest.classList.add('active');
+		var testId = currentTest.getAttribute('attr');
+		if(testId > counter){
+			testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
+			counter = testId;
+			testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
+		}
+		else if(testId == counter){return;}
+		else{
+			testSlide[counter].style.animation = 'prev1 0.5s ease-in forwards';
+			counter = testId;
+			testSlide[counter].style.animation = 'prev2 0.5s ease-in forwards';
+		}
+		indicators();
+	}
+
+	// Add and remove active class from the indicators
+	function indicators(){
+		for(i = 0; i < dots.length; i++){
+			dots[i].className = dots[i].className.replace(' active', '');
+		}
+		dots[counter].className += ' active';
+	}
+
+	// Code for auto sliding
+	function slideNext(){
+		testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
+		if(counter >= testSlide.length - 1){
+			counter = 0;
+		}
+		else{
+			counter++;
+		}
+		testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
+		indicators();
+	}
+	function autoSliding(){
+		deleteInterval = setInterval(timer, 2000);
+		function timer(){
+			slideNext();
+			indicators();
+		}
+	}
+	autoSliding();
+
+	// Stop auto sliding when mouse is over the indicators
+	const container = document.querySelector('.indicators');
+	container.addEventListener('mouseover', pause);
+	function pause(){
+		clearInterval(deleteInterval);
+	}
+
+	// Resume sliding when mouse is out of the indicators
+	container.addEventListener('mouseout', autoSliding);
+
+</script>
+</body>
+</html>
